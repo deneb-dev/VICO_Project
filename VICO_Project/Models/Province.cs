@@ -9,14 +9,12 @@ namespace VICO_Project.Models
 {
     public class Province
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
-        
-        public Region Region { get; set; }
-        [ForeignKey("Region")]
-        public int RegionId { get; set; }
-
+        public string Departemen { get; set; }
+        public string Priode { get; set; }
+        public string Status { get; set; }
 
     }
 }

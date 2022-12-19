@@ -21,19 +21,6 @@ namespace VICO_Project.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Regions",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Regions", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Roles",
                 columns: table => new
                 {
@@ -44,6 +31,19 @@ namespace VICO_Project.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Status",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Status", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -71,15 +71,17 @@ namespace VICO_Project.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
-                    RegionId = table.Column<int>(nullable: false)
+                    Departemen = table.Column<string>(nullable: true),
+                    Priode = table.Column<string>(nullable: true),
+                    StatusId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Provinces", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Provinces_Regions_RegionId",
-                        column: x => x.RegionId,
-                        principalTable: "Regions",
+                        name: "FK_Provinces_Status_StatusId",
+                        column: x => x.StatusId,
+                        principalTable: "Status",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -111,9 +113,9 @@ namespace VICO_Project.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Provinces_RegionId",
+                name: "IX_Provinces_StatusId",
                 table: "Provinces",
-                column: "RegionId");
+                column: "StatusId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserRoles_RoleId",
@@ -135,7 +137,7 @@ namespace VICO_Project.Migrations
                 name: "UserRoles");
 
             migrationBuilder.DropTable(
-                name: "Regions");
+                name: "Status");
 
             migrationBuilder.DropTable(
                 name: "Roles");

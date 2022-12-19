@@ -17,40 +17,52 @@ namespace VICO_Project.Repositories.Data
         {
             this.myContext = myContext;
         }
+
         public int Delete(Province province)
         {
-            myContext.Provinces.Remove(province);
-            var result = myContext.SaveChanges();
-            return result;
+            throw new NotImplementedException();
         }
 
         public List<Province> Get()
         {
-            var data = myContext.Provinces.Include(x => x.Region).ToList();
+            var data = myContext.Provinces.ToList();
+            return data;
+        }
+
+        public Province Get(int id)
+        {
+            var data = myContext.Provinces.FirstOrDefault();
             return data;
         }
 
         public Province Get(int id, Province province)
         {
-            var data = myContext.Provinces.Include(x => x.Region).Where(x => x.Id.Equals(id)).FirstOrDefault();
-            return data;
+            throw new NotImplementedException();
         }
 
         public int Post(Province province)
         {
             myContext.Provinces.Add(province);
-            var result = myContext.SaveChanges();           
-            return result;
-            
+            var result = myContext.SaveChanges();
+            if (result > 0)
+                return result;
+            return 0;
         }
 
-        public int Put(int id,Province province)
+        public int Put(int id, Province province)
         {
             var data = myContext.Provinces.Find(id);
-            data.Name = province.Name;
-            data.RegionId = province.RegionId;
-            //myContext.Provinces.Update(data);
+            data.Departemen = province.Departemen;
+            data.Priode = province.Priode;
+            data.Status = province.Status;
             myContext.Provinces.Update(data);
+            var result = myContext.SaveChanges();
+            return result;
+        }
+
+        public int Remove(Province province)
+        {
+            myContext.Provinces.Remove(province);
             var result = myContext.SaveChanges();
             return result;
         }

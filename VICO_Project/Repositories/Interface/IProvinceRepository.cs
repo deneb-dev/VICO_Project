@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VICO_Project.Repositories.Interface
 {
-    interface IProvinceRepository
+    public interface IProvinceRepository
     {   
         List<Province> Get();
 

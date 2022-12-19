@@ -19,9 +19,19 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RegionId" class="control-label"></label>
-                <input asp-for="RegionId" class="form-control" asp-items="ViewBag.RegionId"/>
-                <span asp-validation-for="RegionId" class="text-danger"></span>
+                <label asp-for="Departemen" class="control-label"></label>
+                <input asp-for="Departemen" class="form-control" />
+                <span asp-validation-for="Departemen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priode" class="control-label"></label>
+                <input asp-for="Priode" class="form-control" />
+                <span asp-validation-for="Priode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" asp-items="ViewBag.RegionId" />
+                <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

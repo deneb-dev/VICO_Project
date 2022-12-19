@@ -9,8 +9,8 @@ using VICO_Project.Context;
 namespace VICO_Project.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20221218094933_Updatedatabase")]
-    partial class Updatedatabase
+    [Migration("20221219025446_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,32 +45,23 @@ namespace VICO_Project.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Departemen")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RegionId")
+                    b.Property<string>("Priode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StatusId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RegionId");
+                    b.HasIndex("StatusId");
 
                     b.ToTable("Provinces");
-                });
-
-            modelBuilder.Entity("VICO_Project.Models.Region", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Regions");
                 });
 
             modelBuilder.Entity("VICO_Project.Models.Role", b =>
@@ -86,6 +77,21 @@ namespace VICO_Project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("VICO_Project.Models.Status", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Status");
                 });
 
             modelBuilder.Entity("VICO_Project.Models.User", b =>
@@ -125,9 +131,9 @@ namespace VICO_Project.Migrations
 
             modelBuilder.Entity("VICO_Project.Models.Province", b =>
                 {
-                    b.HasOne("VICO_Project.Models.Region", "Region")
+                    b.HasOne("VICO_Project.Models.Status", "Status")
                         .WithMany()
-                        .HasForeignKey("RegionId")
+                        .HasForeignKey("StatusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

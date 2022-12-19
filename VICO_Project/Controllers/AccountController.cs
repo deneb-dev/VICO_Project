@@ -42,6 +42,10 @@ namespace VICO_Project.Controllers
         {
             return View();
         }
+        public IActionResult StatusLibur()
+        {
+            return View();
+        }
 
         //
 

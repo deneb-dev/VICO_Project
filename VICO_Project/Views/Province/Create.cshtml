@@ -28,8 +28,12 @@
                 <span asp-validation-for="Priode" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Status" class="control-label">PILIH : 2</label>
-                <input asp-for="Status" class="form-control" asp-items="ViewBag.StatusId" />
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control" asp-items="ViewBag.Status">
+                    <option></option>
+                    <option>Pending</option>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

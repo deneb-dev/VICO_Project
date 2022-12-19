@@ -18,10 +18,7 @@ namespace VICO_Project.Repositories.Data
             this.myContext = myContext;
         }
 
-        public int Delete(Province province)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public List<Province> Get()
         {
@@ -60,7 +57,7 @@ namespace VICO_Project.Repositories.Data
             return result;
         }
 
-        public int Remove(Province province)
+        public int Delete(Province province)
         {
             myContext.Provinces.Remove(province);
             var result = myContext.SaveChanges();

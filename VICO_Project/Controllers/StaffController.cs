@@ -29,66 +29,60 @@ namespace VICO_Project.Controllers
                 return View(data);
             }
 
+
             return RedirectToAction("Unauthorized", "ErrorPage");
         }
-       
 
+        //public IActionResult KeluhanSatu()
+        //{
+        //    var data = KeluhanRepository.Get();
+        //    return View(data);
+        //}
 
-        //    
-
-
-
-        // GET BY ID
-        // GET
+        //GET BY ID
         public IActionResult Details(int id, Province province)
         {
-            //var data = myContext.Provinces.Find(id);
             var data = ProvinceRepository.Get(id, province);
             return View(data);
-
         }
 
-        // CREATE
+        // CREATE 
         // GET
+        //[Authorize("Mhs")]
         public IActionResult Create()
         {
             return View();
-
         }
-        //POST
+        // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Province province)
         {
             if (ModelState.IsValid)
             {
-                //var data = myContext
+
                 var result = ProvinceRepository.Post(province);
                 if (result > 0)
                     return RedirectToAction("Index");
             }
             return View();
-
         }
 
-        // Edit
+        // UPDATE
         // GET
-        //[Authorize(Roles = "Staff")]
-        public IActionResult Update(int id)
+        [HttpGet]
+        public ActionResult Update()
         {
+
             return View();
-
         }
-
-        //POST
-        //[Authorize(Roles = "Staff")]
+        // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Update(int id, Province province)
+        public ActionResult Update(int id, Province province)
         {
             if (ModelState.IsValid)
             {
-
                 var result = ProvinceRepository.Put(id, province);
                 if (result > 0)
                     return RedirectToAction("Index");
@@ -96,9 +90,6 @@ namespace VICO_Project.Controllers
             return View();
         }
 
-        // Hapus
-        // GET
-        //[Authorize(Roles = "Staff")]
         public IActionResult Delete(Province province)
         {
             if (ModelState.IsValid)
@@ -111,7 +102,6 @@ namespace VICO_Project.Controllers
             return View();
 
         }
-
     }
 
 }

@@ -20,29 +20,23 @@ namespace VICO_Project.Controllers
         }
 
 
-        //public IActionResult Index()
-        //{
-        //    var role = HttpContext.Session.GetString("Role");
-        //    if (role.Equals("Admin"))
-        //    {
-        //        var data = ProvinceRepository.Get();
-        //        return View(data);
-        //    }
-        //    if (role.Equals("Staff"))
-        //    {
-        //        var data = ProvinceRepository.Get();
-        //        return View(data);
-        //    }
-
-        //    return RedirectToAction("Unauthorized", "ErrorPage");
-        //}
-        // GET ALL
         public IActionResult Index()
         {
-            var data = ProvinceRepository.Get();
-            return View(data);
-        }
+            var role = HttpContext.Session.GetString("Role");
+            if (role.Equals("Admin"))
+            {
+                var data = ProvinceRepository.Get();
+                return View(data);
+            }
+            if (role.Equals("Staff"))
+            {
+                var data = ProvinceRepository.Get();
+                return View(data);
+            }
 
+            return RedirectToAction("Unauthorized", "ErrorPage");
+        }
+       
         //public IActionResult KeluhanSatu()
         //{
         //    var data = KeluhanRepository.Get();
@@ -100,22 +94,17 @@ namespace VICO_Project.Controllers
             return View();
         }
 
-        // DELETE
-        // GET
-        public ActionResult Delete(int id, Province province)
-        {
-            var data = ProvinceRepository.Get(id, province);
-            return View(data);
-        }
-        // POST
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult Delete(Province province)
         {
-            var result = ProvinceRepository.Delete(province);
-            if (result > 0)
-                return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                //myContext.Provinces.Remove(province);
+                var result = ProvinceRepository.Delete(province);
+                if (result > 0)
+                    return RedirectToAction("Index");
+            }
             return View();
+
         }
     }
 }

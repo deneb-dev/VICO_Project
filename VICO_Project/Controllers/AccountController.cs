@@ -28,10 +28,25 @@ namespace VICO_Project.Controllers
             return View();
         }
         //
-        public IActionResult AdminLayout()
+       
+        public IActionResult Kontak1()
         {
             return View();
         }
+        public IActionResult Cuti1()
+        {
+            return View();
+        }
+        public IActionResult News1()
+        {
+            return View();
+        }
+        public IActionResult Dashboard1()
+        {
+            return View();
+        }
+
+        //
         public IActionResult Kontak()
         {
             return View();
@@ -44,27 +59,18 @@ namespace VICO_Project.Controllers
         {
             return View();
         }
-        public IActionResult StatusLibur()
+        public IActionResult Dashboard()
         {
             return View();
         }
-
         //
 
-        public IActionResult Forgot()
-        {
-            return View();
-        }
 
         public IActionResult Register()
         {
             return View();
         }
 
-        public IActionResult Update()
-        {
-            return View();
-        }
 
         [HttpPost]
         public IActionResult Register(Register register)

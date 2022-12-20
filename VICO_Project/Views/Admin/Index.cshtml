@@ -6,62 +6,76 @@
     Layout = "_AdminLayout";
 }
 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
+</head>
 <center> <h4> <b>Selamat Datang - Admin Libur Jaga</b></h4> </center>
 
-
-<p>
-    <a class="btn btn-outline-warning" asp-action="Create">Create New</a>
-</p>
-<table class="table" id="idTableCuti">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Departemen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Priode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<body>
+    <p>
+        <a class="btn btn-outline-warning" asp-action="Create">Create New</a>
+    </p>
+    <table class="table" id="idTableCuti">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Departemen)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Priode)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-                <td>
-                    @*<a asp-action="Update">update</a>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Departemen)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Priode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
 
-                    @Html.ActionLink("Update", "Update", new { id = item.Id })
-
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
+                <th>Action</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Departemen)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Priode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @*<a asp-action="Update">update</a>*@
+
+                        @Html.ActionLink("Update", "Update", new { id = item.Id })
+
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" />
 <script src="~/js/tablejs.js"></script>
+</html>

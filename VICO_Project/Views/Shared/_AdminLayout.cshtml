@@ -49,7 +49,7 @@
     <link rel="stylesheet" href="~/sneat/assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="~/sneat/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="~/sneat/assets/css/demo.css" />
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="~/sneat/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
@@ -149,10 +149,10 @@
                                 </a>
                             </li>
                             @*<li class="menu-item">
-                                <a asp-controller="Staff" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Without navbar">Respon Libu Jaga</div>
-                                </a>
-                            </li>*@
+                                    <a asp-controller="Staff" asp-action="Index" class="menu-link">
+                                        <div data-i18n="Without navbar">Respon Libu Jaga</div>
+                                    </a>
+                                </li>*@
                             <li class="menu-item">
                                 <a asp-controller="Account" asp-action="Cuti" class="menu-link">
                                     <div data-i18n="Container">Peraturan Cuti</div>
@@ -274,6 +274,8 @@
     <!-- / Layout wrapper -->
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" />
+    <script src="~/js/tablejs.js"></script>
     <script src="~/sneat/assets/vendor/libs/jquery/jquery.js"></script>
     <script src="~/sneat/assets/vendor/libs/popper/popper.js"></script>
     <script src="~/sneat/assets/vendor/js/bootstrap.js"></script>
@@ -286,7 +288,7 @@
 
     <!-- Main JS -->
     <script src="~/sneat/assets/js/main.js"></script>
-   
+
     <!-- Page JS -->
     <script src="~/sneat/assets/js/dashboards-analytics.js"></script>
 

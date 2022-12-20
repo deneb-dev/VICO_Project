@@ -49,6 +49,7 @@
     <Content Remove="C:\Users\MATRIX\.nuget\packages\bootstrap\5.2.3\contentFiles\any\any\wwwroot\js\bootstrap.js.map" />
     <Content Remove="C:\Users\MATRIX\.nuget\packages\bootstrap\5.2.3\contentFiles\any\any\wwwroot\js\bootstrap.min.js" />
     <Content Remove="C:\Users\MATRIX\.nuget\packages\bootstrap\5.2.3\contentFiles\any\any\wwwroot\js\bootstrap.min.js.map" />
+    <Content Remove="wwwroot\js\tablejs.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1804,6 +1805,7 @@
     <None Include="wwwroot\js\.DS_Store" />
     <None Include="wwwroot\js\bootstrap.min.js" />
     <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\tablejs.js" />
     <None Include="wwwroot\js\main.js" />
     <None Include="wwwroot\js\Ma\jquery.min.js" />
     <None Include="wwwroot\js\Ma\main.js" />

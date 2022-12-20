@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('idTableCuti').DataTable({
+    $('#idTableCuti').DataTable({
         dom: 'Bfrtip',
         buttons: [
             'copy', 'csv', 'excel', 'pdf', 'print'

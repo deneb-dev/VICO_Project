@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VICO_Project.Controllers
 {
-    public class HomeController : Controller
+    public class Home1Controller : Controller
     {
         public IActionResult Index()
         {

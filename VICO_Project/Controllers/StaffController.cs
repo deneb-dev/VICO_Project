@@ -22,15 +22,9 @@ namespace VICO_Project.Controllers
 
         public IActionResult Index()
         {
-            var role = HttpContext.Session.GetString("Role");
-            if (role.Equals("Staff"))
-            {
-                var data = ProvinceRepository.Get();
-                return View(data);
-            }
-
-
-            return RedirectToAction("Unauthorized", "ErrorPage");
+            var data = ProvinceRepository.Get();
+            return View(data);
+            
         }
 
         //public IActionResult KeluhanSatu()

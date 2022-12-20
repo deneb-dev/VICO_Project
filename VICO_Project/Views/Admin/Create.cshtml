@@ -1,16 +1,16 @@
 ﻿@model VICO_Project.Models.Province
 
 @{
-    ViewData["Title"] = "Update";
+    ViewData["Title"] = "Create";
 }
 
-<h1>Update</h1>
+<h1>Create</h1>
 
-<h4>Libur JAGA</h4>
+<h4>Province</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Update">
+        <form method="post" asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -31,15 +31,16 @@
                 <label asp-for="Status" class="control-label"></label>
                 <select asp-for="Status" class="form-control" asp-items="ViewBag.Status">
                     <option></option>
-                    <option>Pending</option>
+                    <option>Approved</option>
+                    <option>Valid</option>
                     <span asp-validation-for="Status" class="text-danger"></span>
                 </select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
-</div>
+    </div>
 </div>
 
 <div>

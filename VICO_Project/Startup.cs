@@ -72,6 +72,12 @@ namespace VICO_Project
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Account}/{action=Login}/{id?}");
+
+                //endpoints.MapControllerRoute(
+                //    name: "default",
+                //    pattern: "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
+
+
             });
         }
     }

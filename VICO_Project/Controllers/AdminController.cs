@@ -1,47 +1,30 @@
-﻿using Jint.Runtime.Debugger;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using VICO_Project.Context;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using VICO_Project.Models;
 using VICO_Project.Repositories.Data;
-using System.Linq;
-using Microsoft.AspNetCore.Authorization;
 
 namespace VICO_Project.Controllers
 {
-    public class ProvinceController : Controller
+    public class AdminController : Controller
     {
         ProvinceRepository ProvinceRepository;
 
-        public ProvinceController(ProvinceRepository ProvinceRepository)
+        public AdminController(ProvinceRepository ProvinceRepository)
         {
             this.ProvinceRepository = ProvinceRepository;
         }
 
 
-        public IActionResult Index()
-        {
-            var role = HttpContext.Session.GetString("Role");
-            if (role.Equals("Admin"))
-            {
-                var data = ProvinceRepository.Get();
-                return View(data);
-            }
-            if (role.Equals("Staff"))
-            {
-                var data = ProvinceRepository.Get();
-                return View(data);
-            }
-
+        public IActionResult Index(int id)
+        {     
+            var data = ProvinceRepository.Get();
+            return View(data);
             return RedirectToAction("Unauthorized", "ErrorPage");
         }
-       
-        //public IActionResult KeluhanSatu()
-        //{
-        //    var data = KeluhanRepository.Get();
-        //    return View(data);
-        //}
 
         //GET BY ID
         public IActionResult Details(int id, Province province)
@@ -52,7 +35,7 @@ namespace VICO_Project.Controllers
 
         // CREATE 
         // GET
-        //[Authorize("Mhs")]
+        //[Authorize("")]
         public IActionResult Create()
         {
             return View();

@@ -4,62 +4,73 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "_AdminLayout";
+    
 }
 
-<div class="container" id="containerID">
-    <p>
-        <a class="btn btn-outline-warning" asp-action="Create">Create New</a>
-    </p>
-    <table class="table" id="idTableCuti">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Id)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Departemen)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Priode)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Status)
-                </th>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="~/css/srt.css" rel="stylesheet">
 
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+<div class="container">
+    <br />
+    <center> <h1> <b>Selamat Datang - Staff Libur Jaga</b></h1> </center>
+    <br />
+    <div class="container" id="containerID">
+        <p>
+            <a class="btn btn-outline-warning" asp-action="Create">Create New</a>
+        </p>
+        <table class="table" id="idTableCuti">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Departemen)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Priode)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
-                    <td>
-                        @*<a asp-action="Update">update</a>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Departemen)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Priode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
 
-                        @Html.ActionLink("Update", "Update", new { id = item.Id })
-
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                    </td>
+                    <th>Action</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Departemen)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Priode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @*<a asp-action="Update">update</a>*@
+
+                            @Html.ActionLink("Update", "Update", new { id = item.Id })
+
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

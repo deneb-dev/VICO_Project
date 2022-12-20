@@ -19,13 +19,23 @@
             </div>
             <div class="form-group">
                 <label asp-for="Departemen" class="control-label"></label>
-                <input asp-for="Departemen" class="form-control" />
-                <span asp-validation-for="Departemen" class="text-danger"></span>
+                <select asp-for="Departemen" class="form-control" asp-items="ViewBag.Status">
+                    <option></option>
+                    <option>Keuangan</option>
+                    <option>Operasi</option>
+                    <option>Umum</option>
+                    <option>Humas</option>
+                    <option>Marketing</option>
+                    <option>Administrasi</option>
+                    <option>Barang Dan Jasa</option>
+                    <span asp-validation-for="Departemen" class="text-danger"></span>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Priode" class="control-label"></label>
                 <input asp-for="Priode" class="form-control" />
                 <span asp-validation-for="Priode" class="text-danger"></span>
+
             </div>
             <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>

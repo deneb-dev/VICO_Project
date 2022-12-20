@@ -46,13 +46,14 @@ namespace VICO_Project.Repositories.Data
             return 0;
         }
 
-        public int Put(int id, Province province)
+        public int Put(int Id, Province province)
         {
-            var data = myContext.Provinces.Find(id);
+            var data = myContext.Provinces.Find(Id);
+            myContext.Provinces.Update(data);
+            data.Name = province.Name;
             data.Departemen = province.Departemen;
             data.Priode = province.Priode;
             data.Status = province.Status;
-            myContext.Provinces.Update(data);
             var result = myContext.SaveChanges();
             return result;
         }

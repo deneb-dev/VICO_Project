@@ -2,16 +2,17 @@
 
 @{
     ViewData["Title"] = "Update";
+    Layout = "_StaffLayout";
 }
 
 <section class="get-in-touch">
     <h1 class="title">Update Form Admin Libur Jaga</h1>
-    <form class="contact-form row" asp-action="Create">
+    <form class="contact-form row" asp-action="Update">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-field col-lg-6">
+        @*<div class="form-field col-lg-6">
             <input id="name" asp-for="Name" class="input-text js-input" type="text" required>
             <label class="label" asp-for="Name">Name</label>
-        </div>
+        </div>*@
         <div class="form-field col-lg-6 ">
             <select asp-for="Status" class="input-text js-input" asp-items="ViewBag.RegionId" required>
                 <option></option>

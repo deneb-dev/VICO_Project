@@ -1,9 +1,22 @@
-﻿@{
-    ViewData["Title"] = "Unauthorized";
-    Layout = "_UnauthorizeLayout";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VICO - PT. Maju Terus</title>
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="googlebot" content="noindex,nofollow,noarchive">
+    <meta name="bingbot" content="noindex,nofollow,noarchive">
+    <meta name="msnbot" content="noindex,nofollow,noarchive">
+    <meta name="slurp" content="noindex,nofollow,noarchive">
+    <meta name="teoma" content="noindex,nofollow,noarchive">
+    <meta name="yahoobot" content="noindex,nofollow,noarchive">
+    <link rel="SHORTCUT ICON" href="~/images/vico.jpg" type="image/x-icon">
 
-
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/StyleForbidden.css" />
+</head>
+<body>
 
     <div class="maincontainer">
         <div class="bat">
@@ -33,7 +46,20 @@
         <img class="foregroundimg" src="https://www.blissfullemon.com/wp-content/uploads/2018/09/HauntedHouseForeground.png" alt="haunted house">
 
     </div>
-    <h1 class="errorcode">Unauthorized</h1>
-    <div class="errortext">This area is 401. Turn back now!</div>
+    <h1 class="errorcode">ERROR 403</h1>
+    <div class="errortext">This area is forbidden. Turn back now!</div>
 
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
 
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - VICO_Project - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

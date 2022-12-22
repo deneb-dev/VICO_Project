@@ -13,11 +13,6 @@ namespace VICO_Project.Models
         [ForeignKey("Employee")]
         public int Id { get; set; }
         public string Password { get; set; }
-        public Cuti cuti { get; set; }
-        [ForeignKey("Cuti")]
-        public int id_Cuti { get; set; }
-
-        public Employee Employee { get; set; }
-        public int id_Employee { get; set; }
+        
     }
 }

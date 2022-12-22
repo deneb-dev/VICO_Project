@@ -2,59 +2,38 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "_StaffLayout";
 }
 
-<h1>Create</h1>
-
-<h4>Province</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post" asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Departemen" class="control-label"></label>
-                <select asp-for="Departemen" class="form-control" asp-items="ViewBag.Status">
-                    <option></option>
-                    <option>Keuangan</option>
-                    <option>Operasi</option>
-                    <option>Umum</option>
-                    <option>Humas</option>
-                    <option>Marketing</option>
-                    <option>Administrasi</option>
-                    <option>Barang Dan Jasa</option>
-                    <span asp-validation-for="Departemen" class="text-danger"></span>
-                </select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Priode" class="control-label"></label>
-                <input asp-for="Priode" class="form-control" />
-                <span asp-validation-for="Priode" class="text-danger"></span>
-
-            </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control" asp-items="ViewBag.Status">
-                    <option></option>
-                    <option>Pending</option>
-                    <span asp-validation-for="Status" class="text-danger"></span>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<section class="get-in-touch">
+    <h1 class="title">Add Form Libur Jaga</h1>
+    <form class="contact-form row" asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-field col-lg-6">
+            <input id="name" asp-for="Name" class="input-text js-input" type="text" required>
+            <label class="label" asp-for="Name">Name</label>
+        </div>
+        <div class="form-field col-lg-6 ">
+            <input asp-for="Departemen" id="email" class="input-text js-input" type="text" required>
+            <label class="label" asp-for="Departemen">Department</label>
+        </div>
+        <div class="form-field col-lg-6 ">
+            <input id="company" class="input-text js-input" type="text" asp-for="Priode" required>
+            <label class="label" asp-for="Priode">Periode</label>
+        </div>
+        <div class="form-field col-lg-6 ">
+            <input id="phone" class="input-text js-input" type="text" asp-for="Status" required>
+            <label class="label" asp-for="Status">Status</label>
+        </div>
+        <div class="form-field col-lg-12">
+            <input id="message" class="input-text js-input" type="text" required>
+            <label class="label" for="message">Message</label>
+        </div>
+        <div class="form-field col-lg-12">
+            <input class="submit-btn" type="submit" value="Submit">
+        </div>
+    </form>
+</section>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

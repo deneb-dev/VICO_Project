@@ -23,7 +23,7 @@ namespace VICO_Project.Context
          */
 
 
-        public DbSet<Province> Provinces { get; set; }
+        public DbSet<Cuti> Cutis { get; set; }
         //public DbSet<Status> Status { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }

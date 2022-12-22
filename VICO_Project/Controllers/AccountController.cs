@@ -106,8 +106,13 @@ namespace VICO_Project.Controllers
                     {
                         return RedirectToAction("Index", "Home");
                     }
-                    return RedirectToAction("Unauthorized", "ErrorPage");
+                    else
+                    {
+                        return RedirectToAction("Unauthorized", "ErrorPage", "ErrorPageController");
+                    }
+                    return RedirectToAction("Unauthorized", "ErrorPage", "ErrorPageController");
                 }
+                return RedirectToAction("Unauthorized", "ErrorPage", "ErrorPageController");
                 //return RedirectToAction("Unauthorized", "ErrorPage");
             }
             return View();

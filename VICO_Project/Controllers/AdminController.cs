@@ -11,25 +11,29 @@ namespace VICO_Project.Controllers
 {
     public class AdminController : Controller
     {
-        ProvinceRepository ProvinceRepository;
+        CutiRepository CutiRepository;
 
-        public AdminController(ProvinceRepository ProvinceRepository)
+        public AdminController(CutiRepository CutiRepository)
         {
-            this.ProvinceRepository = ProvinceRepository;
+            this.CutiRepository = CutiRepository;
         }
 
 
         public IActionResult Index(int id)
-        {     
-            var data = ProvinceRepository.Get();
-            return View(data);
-            return RedirectToAction("Unauthorized", "ErrorPage");
+        {
+
+            var data = CutiRepository.Get();
+            return View(data); 
+            return RedirectToAction("Unauthorized", "ErrorPageController");
         }
 
+
+
+
         //GET BY ID
-        public IActionResult Details(int id, Province province)
+        public IActionResult Details(int id, Cuti cuti)
         {
-            var data = ProvinceRepository.Get(id, province);
+            var data = CutiRepository.Get(id, cuti);
             return View(data);
         }
 
@@ -43,12 +47,12 @@ namespace VICO_Project.Controllers
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Province province)
+        public IActionResult Create(Cuti cuti)
         {
             if (ModelState.IsValid)
             {
 
-                var result = ProvinceRepository.Post(province);
+                var result = CutiRepository.Post(cuti);
                 if (result > 0)
                     return RedirectToAction("Index");
             }
@@ -66,23 +70,23 @@ namespace VICO_Project.Controllers
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update(int id, Province province)
+        public ActionResult Update(int id, Cuti cuti)
         {
             if (ModelState.IsValid)
             {
-                var result = ProvinceRepository.Put(id, province);
+                var result = CutiRepository.Put(id, cuti);
                 if (result > 0)
                     return RedirectToAction("Index");
             }
             return View();
         }
 
-        public IActionResult Delete(Province province)
+        public IActionResult Delete(Cuti cuti)
         {
             if (ModelState.IsValid)
             {
-                //myContext.Provinces.Remove(province);
-                var result = ProvinceRepository.Delete(province);
+                //myContext.Provinces.Remove(cuti);
+                var result = CutiRepository.Delete(cuti);
                 if (result > 0)
                     return RedirectToAction("Index");
             }

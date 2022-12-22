@@ -30,7 +30,7 @@ namespace VICO_Project
             services.AddRazorPages();
 
             //dependency injection
-            services.AddScoped<ProvinceRepository>();
+            services.AddScoped<CutiRepository>();
 
             services.AddScoped<AccountRepository>();
             services.AddSession(options =>

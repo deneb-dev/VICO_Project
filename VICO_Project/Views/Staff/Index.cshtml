@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VICO_Project.Models.Province>
+﻿@model IEnumerable<VICO_Project.Models.Cuti>
 
 
 @{
@@ -62,7 +62,7 @@
                         <td>
                             @*<a asp-action="Update">update</a>*@
 
-                            @Html.ActionLink("Update", "Update", new { id = item.Id }, new { @class = "fas fa-edit", @style = "color:green" })
+                            @*@Html.ActionLink("Update", "Update", new { id = item.Id }, new { @class = "fas fa-edit", @style = "color:green" })*@
 
                             @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "fas fa-trash-alt", @style = "48px;color:red" })
                         </td>

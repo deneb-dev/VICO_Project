@@ -9,58 +9,58 @@ using System.Threading.Tasks;
 
 namespace VICO_Project.Repositories.Data
 {
-    public class ProvinceRepository : IProvinceRepository
+    public class CutiRepository : ICutiRepository
     {
         MyContext myContext;
 
-        public ProvinceRepository(MyContext myContext)
+        public CutiRepository(MyContext myContext)
         {
             this.myContext = myContext;
         }
 
         
 
-        public List<Province> Get()
+        public List<Cuti> Get()
         {
-            var data = myContext.Provinces.ToList();
+            var data = myContext.Cutis.ToList();
             return data;
         }
 
-        public Province Get(int id)
+        public Cuti Get(int id)
         {
-            var data = myContext.Provinces.FirstOrDefault();
+            var data = myContext.Cutis.FirstOrDefault();
             return data;
         }
 
-        public Province Get(int id, Province province)
+        public Cuti Get(int id, Cuti cuti)
         {
             throw new NotImplementedException();
         }
 
-        public int Post(Province province)
+        public int Post(Cuti cuti)
         {
-            myContext.Provinces.Add(province);
+            myContext.Cutis.Add(cuti);
             var result = myContext.SaveChanges();
             if (result > 0)
                 return result;
             return 0;
         }
 
-        public int Put(int Id, Province province)
+        public int Put(int Id, Cuti cuti)
         {
-            var data = myContext.Provinces.Find(Id);
-            myContext.Provinces.Update(data);
-            data.Name = province.Name;
-            data.Departemen = province.Departemen;
-            data.Priode = province.Priode;
-            data.Status = province.Status;
+            var data = myContext.Cutis.Find(Id);
+            myContext.Cutis.Update(data);
+            //data.Name = cuti.Name;
+            //data.Departemen = cuti.Departemen;
+            //data.Priode = cuti.Priode;
+            data.Status = cuti.Status;
             var result = myContext.SaveChanges();
             return result;
         }
 
-        public int Delete(Province province)
+        public int Delete(Cuti cuti)
         {
-            myContext.Provinces.Remove(province);
+            myContext.Cutis.Remove(cuti);
             var result = myContext.SaveChanges();
             return result;
         }

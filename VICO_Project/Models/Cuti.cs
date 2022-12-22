@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VICO_Project.Models
 {
-    public class Province
+    public class Cuti
     {
         [Key]
         public int Id { get; set; }

@@ -19,31 +19,7 @@ namespace VICO_Project.Repositories.Data
 
         }
 
-        public ForgotPw Forgot(Forgot forgot)
-        {
-            var defpass = Hashing.HashPassword(forgot.DefaultPw);
-            var data = myContext.UserRoles
-                .Include(x => x.Role)
-                .Include(x => x.User)
-                .Include(x => x.User.Employee)
-                .FirstOrDefault(x => x.User.Employee.Email.Equals(forgot.Email));
-            var verify = Hashing.ValidatePassword(forgot.Default, defpass);
-
-            if (verify)
-            {
-                var fpass = new ForgotPw()
-                {
-                    Id = data.User.Employee.Id,
-                    Role = data.Role.Name,
-                    Email = data.User.Employee.Email,
-
-                };
-                return fpass;
-            }
-
-            return null;
-        }
-
+ 
         public int Update(int id, Update update)
         {
             var oldpass = update.OldPw;

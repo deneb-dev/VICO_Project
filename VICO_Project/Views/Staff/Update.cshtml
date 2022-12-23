@@ -25,8 +25,16 @@
             </select>
             <label class="label" asp-for="Departemen">Department</label>
         </div>
+        <div class="form-field col-lg-6">
+            <input id="name" asp-for="Awal_Libur" class="input-text js-input" type="datetime" required>
+            <label class="label" asp-for="Awal_Libur">Awal_Libur</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input id="name" asp-for="Akhir_Libur" class="input-text js-input" type="datetime" required>
+            <label class="label" asp-for="Akhir_Libur">Akhir_Libur</label>
+        </div>
         <div class="form-field col-lg-6 ">
-            <select asp-for="Priode" class="input-text js-input" asp-items="ViewBag.RegionId" required>
+            <select asp-for="Priode" class="input-text js-input" asp-items="ViewBag.PriodeId" required>
                 <option>-</option>
                 <option>Januari</option>
                 <option>Febuari</option>
@@ -51,9 +59,9 @@
             <label class="label" asp-for="Status">Status</label>
         </div>
         @*<div class="form-field col-lg-12">
-                <input id="message" class="input-text js-input" type="text" required>
-                <label class="label" for="message">Message</label>
-            </div>*@
+            <input id="message" class="input-text js-input" type="text" required>
+            <label class="label" for="message">Message</label>
+        </div>*@
         <div class="form-field col-lg-12">
             <input class="submit-btn" type="submit" value="Submit">
         </div>

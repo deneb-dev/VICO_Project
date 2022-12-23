@@ -31,6 +31,12 @@
                         @Html.DisplayNameFor(model => model.Departemen)
                     </th>
                     <th>
+                        @Html.DisplayNameFor(model => model.Awal_Libur)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Akhir_Libur)
+                    </th>
+                    <th>
                         @Html.DisplayNameFor(model => model.Priode)
                     </th>
                     <th>
@@ -52,6 +58,12 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Departemen)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Awal_Libur.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Akhir_Libur.Date)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Priode)

@@ -32,6 +32,12 @@
                             @Html.DisplayNameFor(model => model.Departemen)
                         </th>
                         <th>
+                            @Html.DisplayNameFor(model => model.Awal_Libur)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Akhir_Libur)
+                        </th>
+                        <th>
                             @Html.DisplayNameFor(model => model.Priode)
                         </th>
                         <th>
@@ -44,30 +50,36 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Id)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Departemen)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Priode)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Status)
-                            </td>
-                            <td>
-                                @*<a asp-action="Update">update</a>*@
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Departemen)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Awal_Libur)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Akhir_Libur)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Priode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @*<a asp-action="Update">update</a>*@
 
-                                @Html.ActionLink("Update", "Update", new { id = item.Id }, new { @class = "fas fa-edit", @style = "color:green" })
+                            @Html.ActionLink("Update", "Update", new { id = item.Id }, new { @class = "fas fa-edit", @style = "color:green" })
 
-                                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "fas fa-trash-alt", @style = "color:red" })
-                            </td>
-                        </tr>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "fas fa-trash-alt", @style = "color:red" })
+                        </td>
+                    </tr>
                     }
                 </tbody>
             </table>

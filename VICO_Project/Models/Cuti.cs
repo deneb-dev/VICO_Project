@@ -13,6 +13,9 @@ namespace VICO_Project.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Departemen { get; set; }
+        public DateTime Awal_Libur { get; set; }
+        public DateTime Akhir_Libur { get; set; }
+
         public string Priode { get; set; }
         public string Status { get; set; }
 

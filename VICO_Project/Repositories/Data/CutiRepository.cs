@@ -61,6 +61,7 @@ namespace VICO_Project.Repositories.Data
         public int Delete(Cuti cuti)
         {
             myContext.Cutis.Remove(cuti);
+
             var result = myContext.SaveChanges();
             return result;
         }
